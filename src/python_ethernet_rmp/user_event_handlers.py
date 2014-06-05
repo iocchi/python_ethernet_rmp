@@ -56,6 +56,7 @@ import time,sys,os, Queue
 Define some general parameters for the example like various commands 
 """
 RMP_CMD_NO_MOTION = [RMP_MOTION_CMD_ID,0.0,0.0]
+RMP_FORCE_FEEDBACK = [RMP_CFG_CMD_ID,RMP_CMD_NONE,0.0]
 RMP_SET_TRACTOR = [RMP_CFG_CMD_ID,RMP_CMD_SET_OPERATIONAL_MODE,TRACTOR_REQUEST]
 RMP_SET_STANDBY = [RMP_CFG_CMD_ID,RMP_CMD_SET_OPERATIONAL_MODE,STANDBY_REQUEST]
 
@@ -132,7 +133,7 @@ class RMPEventHandlers:
 		#	self.cmd_queue.put([RMP_MOTION_CMD_ID,self.linear,self.angular])
 		#else:
 		#	self.cmd_queue.put(RMP_CMD_NO_MOTION)
-		self.cmd_queue.put(RMP_CMD_NO_MOTION)
+		self.cmd_queue.put(RMP_FORCE_FEEDBACK)
 	
 	"""
 	Called when feedback from the robot is received
@@ -161,7 +162,7 @@ class RMPEventHandlers:
 		self.cmd_queue.put(RMP_SET_TRACTOR)
 		
 	"""
-	Adds a movement command to the queue for the robot
+	Adds a command to the queue for the robot
 	"""
 	def AddCommand(self,command):
 		self.cmd_queue.put(command)
