@@ -219,6 +219,10 @@ class RMP:
         but not update the UDFB to do so. This allows the user to verify the configuration
         while it is changing.
         """
+        for item in config:
+			print "%s :: %s" % (item[1],convert_u32_to_float(item[2]))
+			
+        
         force_nvm_feedback = [RMP_CFG_CMD_ID,RMP_CMD_FORCE_CONFIG_FEEDBACK_BITMAPS,1]
         set_user_feedback = [RMP_CFG_CMD_ID,RMP_CMD_FORCE_CONFIG_FEEDBACK_BITMAPS,0]
         
