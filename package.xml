@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package>
+  <name>python_ethernet_rmp</name>
+  <version>0.0.0</version>
+  <description>The python_ethernet_rmp package</description>
+  <maintainer email="RAIL@wpi.edu">RAIL</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
