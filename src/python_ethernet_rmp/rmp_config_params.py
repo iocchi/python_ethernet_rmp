@@ -54,7 +54,7 @@ from python_ethernet_rmp.utils import *
 """
 The default values uncomment this section and remove the one below
 to use the defaults
-
+"""
 my_velocity_limit_mps             = DEFAULT_MAXIMUM_VELOCITY_MPS
 my_accel_limit_mps2               = DEFAULT_MAXIMUM_ACCELERATION_MPS2
 my_decel_limit_mps2               = DEFAULT_MAXIMUM_DECELERATION_MPS2
@@ -62,33 +62,11 @@ my_dtz_rate_mps2                  = DEFAULT_MAXIMUM_DTZ_DECEL_RATE_MPS2
 my_coastdown_accel_mps2           = DEFAULT_COASTDOWN_ACCEL_MPS2
 my_yaw_rate_limit_rps             = DEFAULT_MAXIMUM_YAW_RATE_RPS
 my_yaw_accel_limit_rps2           = DEFAULT_MAX_YAW_ACCEL_RPS2
-my_tire_diameter_m                = I2_TIRE_DIAMETER_M
+my_tire_diameter_m                = DEFAULT_TIRE_DIAMETER_M
 my_wheel_base_length_m            = DEFAULT_WHEEL_BASE_LENGTH_M
-my_wheel_track_width_m            = I2_WHEEL_TRACK_WIDTH_M
-my_gear_ratio                     = I2_TRANSMISSION_RATIO
+my_wheel_track_width_m            = DEFAULT_WHEEL_TRACK_WIDTH_M
+my_gear_ratio                     = DEFAULT_TRANSMISSION_RATIO
 my_config_bitmap                  = DEFAULT_CONFIG_BITMAP
-my_ip_address                     = DEFAULT_IP_ADDRESS
-my_port_num                       = DEFAULT_PORT_NUMBER
-my_subnet_mask                    = DEFAULT_SUBNET_MASK
-my_gateway                        = DEFAULT_GATEWAY
-my_user_defined_feedback_bitmap_1 = DEFAULT_USER_FB_1_BITMAP
-my_user_defined_feedback_bitmap_2 = DEFAULT_USER_FB_1_BITMAP
-my_user_defined_feedback_bitmap_3 = DEFAULT_USER_FB_1_BITMAP
-my_user_defined_feedback_bitmap_4 = DEFAULT_USER_FB_1_BITMAP
-"""
-
-my_velocity_limit_mps             = 0.5
-my_accel_limit_mps2               = 0.981
-my_decel_limit_mps2               = 0.981
-my_dtz_rate_mps2                  = 0.981
-my_coastdown_accel_mps2           = 0.1962
-my_yaw_rate_limit_rps             = 0.5
-my_yaw_accel_limit_rps2           = 0.5 
-my_tire_diameter_m                = I2_TIRE_DIAMETER_M
-my_wheel_base_length_m            = DEFAULT_WHEEL_BASE_LENGTH_M
-my_wheel_track_width_m            = I2_WHEEL_TRACK_WIDTH_M
-my_gear_ratio                     = I2_TRANSMISSION_RATIO
-my_config_bitmap                  = 1  #DEFAULT_CONFIG_BITMAP
 my_ip_address                     = DEFAULT_IP_ADDRESS
 my_port_num                       = DEFAULT_PORT_NUMBER
 my_subnet_mask                    = DEFAULT_SUBNET_MASK
@@ -97,78 +75,6 @@ my_user_defined_feedback_bitmap_1 = DEFAULT_USER_FB_1_BITMAP
 my_user_defined_feedback_bitmap_2 = DEFAULT_USER_FB_2_BITMAP
 my_user_defined_feedback_bitmap_3 = DEFAULT_USER_FB_3_BITMAP
 my_user_defined_feedback_bitmap_4 = DEFAULT_USER_FB_4_BITMAP
-
-"""
-Sets all of the global values to the value set by the ros parameters
-provided as an array of the values
-""" 
-   
-def SetRMPConfigParams(params):
-	print "Setting values!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	for item in params:
-		if item[0] == 'my_velocity_limit_mps':
-			print my_velocity_limit_mps
-			global my_velocity_limit_mps
-			my_velocity_limit_mps = item[1]
-			print my_velocity_limit_mps
-		elif item[0] == 'my_accel_limit_mps2':
-			global my_accel_limit_mps2
-			my_accel_limit_mps2 = item[1]
-		elif item[0] == 'my_decel_limit_mps2':
-			global my_decel_limit_mps2
-			my_decel_limit_mps2 = item[1]
-		elif item[0] == 'my_dtz_rate_mps2':
-			global my_dtz_rate_mps2
-			my_dtz_rate_mps2 = item[1]
-		elif item[0] == 'my_coastdown_accel_mps2':
-			global my_coastdown_accel_mps2
-			my_coastdown_accel_mps2 = item[1]
-		elif item[0] == 'my_yaw_rate_limit_rps':
-			global my_yaw_rate_limit_rps
-			my_yaw_rate_limit_rps = item[1]
-		elif item[0] == 'my_yaw_accel_limit_rps2':
-			global my_yaw_accel_limit_rps2
-			my_yaw_accel_limit_rps2 = item[1]
-		elif item[0] == 'my_tire_diameter_m':
-			global my_tire_diameter_m
-			my_tire_diameter_m = item[1]
-		elif item[0] == 'my_wheel_base_length_m':
-			global my_wheel_base_length_m
-			my_wheel_base_length_m = item[1]
-		elif item[0] == 'my_wheel_track_width_m':
-			global my_wheel_track_width_m
-			my_wheel_track_width_m = item[1]
-		elif item[0] == 'my_gear_ratio':
-			global my_gear_ratio
-			my_gear_ratio = item[1]
-		elif item[0] == 'my_config_bitmap':
-			global my_config_bitmap
-			my_config_bitmap = item[1]
-		elif item[0] == 'my_ip_address':
-			global my_ip_address
-			my_ip_address = item[1]
-		elif item[0] == 'my_port_num':
-			global my_port_num
-			my_port_num = item[1]
-		elif item[0] == 'my_subnet_mask':
-			global my_subnet_mask
-			my_subnet_mask = item[1]
-		elif item[0] == 'my_gateway':
-			global my_gateway
-			my_gateway = item[1]
-		elif item[0] == 'my_user_defined_feedback_bitmap_1':
-			global my_user_defined_feedback_bitmap_1
-			my_user_defined_feedback_bitmap_1 = item[1]
-		elif item[0] == 'my_user_defined_feedback_bitmap_2':
-			global my_user_defined_feedback_bitmap_2
-			my_user_defined_feedback_bitmap_2 = item[1]
-		elif item[0] == 'my_user_defined_feedback_bitmap_3':
-			global my_user_defined_feedback_bitmap_3
-			my_user_defined_feedback_bitmap_3 = item[1]
-		elif item[0] == 'my_user_defined_feedback_bitmap_4':
-			global my_user_defined_feedback_bitmap_4
-			my_user_defined_feedback_bitmap_4 = item[1]
-
 
 """
 Modify above not below, this section is populated with those values and should not be changed
