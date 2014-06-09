@@ -309,7 +309,6 @@ class RMP:
         Populate the message to the RMP platform if it is not a
         valid format return False
         """
-        #print "input_cmd ::  ", input_cmd
         try:
             cmds = [0]*3
             cmds[0] = input_cmd[0]

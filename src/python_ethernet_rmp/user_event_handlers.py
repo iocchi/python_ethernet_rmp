@@ -93,7 +93,7 @@ RMP_RSP_DATA_RDY: A response packet is ready for the user.
 class RMPEventHandlers:
 	def __init__(self,cmd,rsp,inflags,rmpExchange):
 		
-		print "initializing event handlers"
+		print "Initializing event handlers"
 		
 		"""
 		Flag to run the loop
@@ -126,14 +126,8 @@ class RMPEventHandlers:
 	Called when the robot requests a command
 	"""	
 	def Send_Cmd(self):
-		#if not self.vels.empty():
-		#	command = self.vels.get()
-		#	self.linear = command[0]
-		#	self.angular = command[1]
-		#	self.cmd_queue.put([RMP_MOTION_CMD_ID,self.linear,self.angular])
-		#else:
-		#	self.cmd_queue.put(RMP_CMD_NO_MOTION)
-		self.cmd_queue.put(RMP_FORCE_FEEDBACK)
+		if self.cmd_queue.empty():
+			self.cmd_queue.put(RMP_FORCE_FEEDBACK)
 	
 	"""
 	Called when feedback from the robot is received
@@ -166,7 +160,6 @@ class RMPEventHandlers:
 	"""
 	def AddCommand(self,command):
 		self.cmd_queue.put(command)
-		#self.vels.put([command.linear,command.angular])
 	
 	"""
 	Failure procedure
