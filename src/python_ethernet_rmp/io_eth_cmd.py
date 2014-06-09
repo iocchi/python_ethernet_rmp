@@ -108,4 +108,3 @@ class IO_ETHERNET:
     def Close(self):
         self.conn.shutdown(socket.SHUT_RDWR)
         self.conn.close()
-        

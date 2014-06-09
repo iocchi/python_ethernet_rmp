@@ -144,4 +144,3 @@ def buffer_crc_is_valid(byte_buffer, bytes_in_buffer):
         success = False;
 
     return (success);
-
