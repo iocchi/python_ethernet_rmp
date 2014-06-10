@@ -108,9 +108,3 @@ Used to convert an IP address in integer format to a dotted quad string
 def numToDottedQuad(n):
     "convert long int to dotted quad string"
     return socket.inet_ntoa(struct.pack('I',n))
-
-
-
-
-
-

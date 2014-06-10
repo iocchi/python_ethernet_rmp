@@ -101,6 +101,3 @@ CONFIG_PARAMS = [
      [RMP_CFG_CMD_ID,RMP_CMD_SET_USER_FB_2_BITMAP,my_user_defined_feedback_bitmap_2],
      [RMP_CFG_CMD_ID,RMP_CMD_SET_USER_FB_3_BITMAP,my_user_defined_feedback_bitmap_3],
      [RMP_CFG_CMD_ID,RMP_CMD_SET_USER_FB_4_BITMAP,my_user_defined_feedback_bitmap_4]]
-
-
-
