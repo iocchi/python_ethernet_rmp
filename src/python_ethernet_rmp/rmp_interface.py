@@ -213,6 +213,11 @@ class RMP:
                 self.rsp_queue.put(self.user_defined_feedback)
                 self.out_flags.put(RMP_RSP_DATA_RDY)
 
+            # loop rate (TODO: make it parametrics)
+            rate=25
+            time.sleep(1.0/rate)
+
+
     def set_and_verify_config_params(self,config):
         """
         The commands that force the feedback array to just contain the configurable elements
