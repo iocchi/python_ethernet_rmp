@@ -214,7 +214,7 @@ class RMP:
                 self.out_flags.put(RMP_RSP_DATA_RDY)
 
             # loop rate (TODO: make it parametrics)
-            rate=25
+            rate=100
             time.sleep(1.0/rate)
 
 
